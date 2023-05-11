@@ -1,0 +1,16 @@
+<?php
+
+namespace {{namespace}};
+
+use Spatie\ModelStates\State;
+use Spatie\ModelStates\StateConfig;
+
+abstract class {{class}} extends State
+{
+    abstract public function foo(): void;
+
+    public static function config(): StateConfig
+    {
+        return parent::config(){{default}};
+    }
+}

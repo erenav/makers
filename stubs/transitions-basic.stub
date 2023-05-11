@@ -1,0 +1,28 @@
+<?php
+
+namespace {{namespace}};
+
+use Spatie\ModelStates\Transition;
+
+class {{class}} extends Transition
+{
+    private {{model}} $model;
+
+    private string $message;
+
+    public function __construct({{model}} $model, string $message)
+    {
+        $this->model = $model;
+
+        $this->message = $message;
+    }
+
+    public function handle(): Payment
+    {
+        //
+
+        $this->model->save();
+
+        return $this->model;
+    }
+}

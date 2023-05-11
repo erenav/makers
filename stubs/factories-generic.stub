@@ -1,0 +1,13 @@
+<?php
+
+namespace {{namespace}};
+{{import}}
+class {{class}}
+{
+    public static function fromInput(mixed $property): {{output}}
+    {
+        return new {{output}}(
+            property: $property
+        );
+    }
+}
