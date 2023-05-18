@@ -56,6 +56,13 @@ return [
                 'generic' => 'factories-generic.stub',
             ],
         ],
+        'macros' => [
+            'namespace' => 'Macros',
+            'postfix' => 'Macros',
+            'stubs' => [
+                'basic' => 'macros-basic.stub',
+            ],
+        ],
         'pipe' => [
             'namespace' => 'Pipes',
             'postfix' => 'Pipe',
