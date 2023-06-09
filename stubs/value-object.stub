@@ -1,0 +1,53 @@
+<?php
+
+namespace {{namespace}};
+
+use Illuminate\Support\Facades\Validator;
+use InvalidArgumentException;
+use Stringable;
+
+final readonly class {{class}} implements Stringable
+{
+    private mixed $value;
+
+    private function __construct(mixed $input)
+    {
+        $this->validate($input);
+
+        $this->value = $input;
+    }
+
+    public static function fromMixed(mixed $input): self
+    {
+        return new self($input);
+    }
+
+    public static function rules(): array
+    {
+        return [];
+    }
+
+    public function value(): mixed
+    {
+        return $this->value;
+    }
+
+    public function equals({{class}} $input): bool
+    {
+        return $this->value() === $input->value();
+    }
+
+    public function __toString(): string
+    {
+        return $this->value();
+    }
+
+    private function validate(mixed $input): void
+    {
+        $validator = Validator::make(['value' => $input], self::rules())->stopOnFirstFailure();
+
+        if ($validator->fails()) {
+            throw new InvalidArgumentException($validator->errors()->first());
+        }
+    }
+}

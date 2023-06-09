@@ -11,6 +11,7 @@ use Erenav\Makers\Commands\MakePipeCommand;
 use Erenav\Makers\Commands\MakeStateCommand;
 use Erenav\Makers\Commands\MakeStateImplementationCommand;
 use Erenav\Makers\Commands\MakeStateTransitionCommand;
+use Erenav\Makers\Commands\MakeValueObjectCommand;
 use Erenav\Makers\Commands\PublishStubsCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -29,6 +30,7 @@ class MakersServiceProvider extends PackageServiceProvider
                 ->hasCommand(MakeStateCommand::class)
                 ->hasCommand(MakeStateImplementationCommand::class)
                 ->hasCommand(MakeStateTransitionCommand::class)
+                ->hasCommand(MakeValueObjectCommand::class)
                 ->hasCommand(PublishStubsCommand::class)
                 ->hasConfigFile();
     }

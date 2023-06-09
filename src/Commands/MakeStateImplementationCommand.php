@@ -44,7 +44,7 @@ class MakeStateImplementationCommand extends MakersCommand
             [
                 'parent',
                 InputArgument::REQUIRED,
-                'The name or the parent class',
+                'The name of the parent class',
             ],
         ]);
     }

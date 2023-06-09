@@ -31,14 +31,16 @@ php artisan vendor:publish --tag="makers-config"
 ## Commands
 
 ```bash
-php artisan makers:action                Create a new action class
-php artisan makers:dto                   Create a new dto class
-php artisan makers:enum                  Create a new enum class
-php artisan makers:generic-factory       Create a new generic factory class
-php artisan makers:pipe                  Create a new pipe class
-php artisan makers:state                 Create new state classes
-php artisan makers:state-implementation  Create new state implementation classes
-php artisan makers:state-transition      Create a new state transition class
+php artisan makers:action {name}                         Create a new action class
+php artisan makers:dto {name} {--readonly} {--factory}   Create a new dto class
+php artisan makers:enum {name} {--backed=}               Create a new enum class
+php artisan makers:generic-factory {name} {--import=}    Create a new generic factory class
+php artisan makers:macros {name}                         Create a new macro class
+php artisan makers:pipe {name}                           Create a new pipe class
+php artisan makers:state {name} {implementations?}       Create a new state classes
+php artisan makers:state-implementation {name} {parent}  Create a new state implementation classes
+php artisan makers:state-transition {name} {model}       Create a new state transition class
+php artisan makers:value-object {name} {--cast}          Create a new value object class (with an optional cast class)
 ```
 
 ### Note

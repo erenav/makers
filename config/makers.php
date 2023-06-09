@@ -91,5 +91,12 @@ return [
                 'basic' => 'transitions-basic.stub',
             ],
         ],
+        'value-object' => [
+            'namespace' => 'ValueObjects',
+            'postfix' => '',
+            'stubs' => [
+                'basic' => 'value-object.stub',
+            ],
+        ],
     ],
 ];
