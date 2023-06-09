@@ -44,7 +44,7 @@ final readonly class {{class}} implements Stringable
 
     private function validate(mixed $input): void
     {
-        $validator = Validator::make(['value' => $input], self::rules())->stopOnFirstFailure();
+        $validator = Validator::make(['value' => $input], ['value' => self::rules()])->stopOnFirstFailure();
 
         if ($validator->fails()) {
             throw new InvalidArgumentException($validator->errors()->first());
