@@ -22,7 +22,6 @@
         "php": "^8.2",
         "laravel/framework": "^9.0|^10.0",
         "illuminate/contracts": "^10.0",
-        "spatie/laravel-model-states": "^2.4",
         "spatie/laravel-package-tools": "^1.14.0"
     },
     "require-dev": {
@@ -32,6 +31,9 @@
         "pestphp/pest": "^2.0",
         "pestphp/pest-plugin-arch": "^2.0",
         "pestphp/pest-plugin-laravel": "^2.0"
+    },
+    "suggest": {
+        "spatie/laravel-model-states": "Needed only if using the makers:[state|state-implementation|state-transition] commands"
     },
     "autoload": {
         "psr-4": {
