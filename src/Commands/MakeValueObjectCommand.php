@@ -31,7 +31,7 @@ class MakeValueObjectCommand extends MakersCommand
     protected function createCast(): void
     {
         $this->call('make:cast', [
-            'name' => $this->getNameInput(),
+            'name' => str_replace(config('makers.makes.value-object.postfix'), '', $this->getNameInput()) . 'Cast',
         ]);
     }
 
