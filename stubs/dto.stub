@@ -1,0 +1,17 @@
+<?php
+
+namespace {{namespace}};
+
+class {{class}}
+{
+    public function __construct(
+        public readonly mixed $property,
+    ) {}
+
+    public static function fromArray(array $input): static
+    {
+        return new self(
+            property: $input['property'],
+        );
+    }
+}

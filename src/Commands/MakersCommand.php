@@ -50,4 +50,5 @@ abstract class MakersCommand extends GeneratorCommand
     {
         return '';
     }
+
 }

@@ -12,7 +12,7 @@ it('can make an pipe', function () {
 
     $name = "{$className}{$postFix}";
 
-    $this->artisan("makers:pipe {$className}")->assertExitCode(0);
+    $this->artisan("make:pipe {$className}")->assertExitCode(0);
 
     $this->assertFileExists($targetPath . "/{$name}.php");
 });
@@ -30,7 +30,7 @@ it('can make an pipe with correct postfix', function () {
 
     $name = "{$className}{$postFix}";
 
-    $this->artisan("makers:pipe {$name}")->assertExitCode(0);
+    $this->artisan("make:pipe {$name}")->assertExitCode(0);
 
     $this->assertFileExists($targetPath . "/{$name}.php");
 });

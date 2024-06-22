@@ -28,74 +28,60 @@ return [
     'makes' => [
         'action' => [
             'namespace' => 'Actions',
-            'postfix' => '',
+            'postfix' => 'Action',
             'stubs' => [
-                'generic' => 'actions-basic.stub',
+                'standard' => 'action.stub',
             ],
         ],
         'dto' => [
             'namespace' => 'DTOs',
             'postfix' => 'Data',
             'stubs' => [
-                'basic' => 'dtos-basic.stub',
-                'readonly' => 'dtos-readonly.stub',
+                'standard' => 'dto.stub',
+                'readonly' => 'dto-readonly.stub',
             ],
         ],
         'enum' => [
             'namespace' => 'Enums',
             'postfix' => 'Enum',
             'stubs' => [
-                'basic' => 'enums-basic.stub',
-                'backed' => 'enums-backed.stub',
-            ],
-        ],
-        'generic-factory' => [
-            'namespace' => 'Factories',
-            'postfix' => 'Factory',
-            'stubs' => [
-                'generic' => 'factories-generic.stub',
+                'standard' => 'enum.stub',
+                'backed' => 'enum-backed.stub',
             ],
         ],
         'macros' => [
             'namespace' => 'Macros',
             'postfix' => 'Macros',
             'stubs' => [
-                'basic' => 'macros-basic.stub',
+                'standard' => 'macro.stub',
             ],
         ],
         'pipe' => [
             'namespace' => 'Pipes',
             'postfix' => 'Pipe',
             'stubs' => [
-                'generic' => 'pipes-basic.stub',
+                'standard' => 'pipe.stub',
+            ],
+        ],
+        'states' => [
+            'namespace' => 'States',
+            'postfix' => '',
+            'stubs' => [
+                'standard' => 'base-state.stub',
             ],
         ],
         'state' => [
             'namespace' => 'States',
             'postfix' => '',
             'stubs' => [
-                'abstract' => 'states-abstract.stub',
+                'standard' => 'state.stub',
             ],
         ],
-        'state-implementation' => [
-            'namespace' => 'States',
-            'postfix' => '',
-            'stubs' => [
-                'implementation' => 'states-implementation.stub',
-            ],
-        ],
-        'state-transition' => [
-            'namespace' => 'Transitions',
-            'postfix' => 'Transition',
-            'stubs' => [
-                'basic' => 'transitions-basic.stub',
-            ],
-        ],
-        'value-object' => [
+        'value' => [
             'namespace' => 'ValueObjects',
             'postfix' => '',
             'stubs' => [
-                'basic' => 'value-object.stub',
+                'standard' => 'value-object.stub',
             ],
         ],
     ],

@@ -4,15 +4,15 @@ namespace Erenav\Makers\Commands;
 
 class MakeMacrosCommand extends MakersCommand
 {
-    protected $name = 'makers:macros';
+    protected $name = 'make:macros';
 
-    protected $description = 'Create a new macros class';
+    protected $description = 'Create a new class for macros';
 
     protected $type = 'Macros';
 
     protected function getStub(): string
     {
-        return $this->resolveStubPath(config('makers.makes.macros.stubs.basic'));
+        return $this->resolveStubPath(config('makers.makes.macros.stubs.standard'));
     }
 
     protected function getDefaultNamespace($rootNamespace): string

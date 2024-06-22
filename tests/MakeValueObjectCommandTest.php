@@ -8,11 +8,11 @@ it('can make a value object', function () {
     File::deleteDirectory($targetPath);
 
     $className = 'Test';
-    $postFix = config('makers.makes.value-object.postfix');
+    $postFix = config('makers.makes.value.postfix');
 
     $name = "{$className}{$postFix}";
 
-    $this->artisan("makers:value-object {$className}")->assertExitCode(0);
+    $this->artisan("make:value {$className}")->assertExitCode(0);
 
     $this->assertFileExists($targetPath . "/{$name}.php");
 });
@@ -23,14 +23,14 @@ it('can make a value object with correct postfix', function () {
     File::deleteDirectory($targetPath);
 
     // override the config value
-    config(['makers.makes.value-object.postfix' => 'ValueObject']);
+    config(['makers.makes.value.postfix' => 'ValueObject']);
 
     $className = 'Test';
-    $postFix = config('makers.makes.value-object.postfix');
+    $postFix = config('makers.makes.value.postfix');
 
     $name = "{$className}{$postFix}";
 
-    $this->artisan("makers:value-object {$name}")->assertExitCode(0);
+    $this->artisan("make:value {$name}")->assertExitCode(0);
 
     $this->assertFileExists($targetPath . "/{$name}.php");
 });

@@ -12,7 +12,7 @@ it('can make an dto', function () {
 
     $name = "{$className}{$postFix}";
 
-    $this->artisan("makers:dto {$className}")->assertExitCode(0);
+    $this->artisan("make:dto {$className}")->assertExitCode(0);
 
     $this->assertFileExists($targetPath . "/{$name}.php");
 });
@@ -30,7 +30,7 @@ it('can make an dto with correct postfix', function () {
 
     $name = "{$className}{$postFix}";
 
-    $this->artisan("makers:dto {$name}")->assertExitCode(0);
+    $this->artisan("make:dto {$name}")->assertExitCode(0);
 
     $this->assertFileExists($targetPath . "/{$name}.php");
 });

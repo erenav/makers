@@ -12,7 +12,7 @@ it('can make a macros class', function () {
 
     $name = "{$className}{$postFix}";
 
-    $this->artisan("makers:macros {$className}")->assertExitCode(0);
+    $this->artisan("make:macros {$className}")->assertExitCode(0);
 
     $this->assertFileExists($targetPath . "/{$name}.php");
 });
@@ -30,7 +30,7 @@ it('can make an macros with correct postfix', function () {
 
     $name = "{$className}{$postFix}";
 
-    $this->artisan("makers:macros {$name}")->assertExitCode(0);
+    $this->artisan("make:macros {$name}")->assertExitCode(0);
 
     $this->assertFileExists($targetPath . "/{$name}.php");
 });

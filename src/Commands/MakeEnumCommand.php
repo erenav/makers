@@ -6,7 +6,7 @@ use Symfony\Component\Console\Input\InputOption;
 
 class MakeEnumCommand extends MakersCommand
 {
-    protected $name = 'makers:enum';
+    protected $name = 'make:enum';
 
     protected $description = 'Create a new enum class';
 
@@ -15,9 +15,9 @@ class MakeEnumCommand extends MakersCommand
     protected function getStub(): string
     {
         return $this->resolveStubPath(
-            $this->option('backed')
+            $this->option('type')
                 ? config('makers.makes.enum.stubs.backed')
-                : config('makers.makes.enum.stubs.basic')
+                : config('makers.makes.enum.stubs.standard')
         );
     }
 
@@ -30,8 +30,8 @@ class MakeEnumCommand extends MakersCommand
     {
         $stub = parent::buildClass($name);
 
-        if($this->option('backed')) {
-            $stub = $this->replaceBackedType($stub, $this->option('backed'));
+        if($this->option('type')) {
+            $stub = $this->replaceBackedType($stub, $this->option('type'));
         }
 
         return $stub;
@@ -49,7 +49,7 @@ class MakeEnumCommand extends MakersCommand
     protected function getOptions(): array
     {
         return array_merge([
-            ['backed', null, InputOption::VALUE_REQUIRED, 'Generate a backed enum.'],
+            ['type', null, InputOption::VALUE_REQUIRED, 'Generate a backed enum.'],
         ], parent::getOptions());
     }
 

@@ -4,15 +4,98 @@
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/erenav/makers/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/erenav/makers/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/erenav/makers.svg?style=flat-square)](https://packagist.org/packages/erenav/makers)
 
-Custom `artisan make` commands for Laravel applications.
+Opinionated custom `artisan make` commands for Laravel applications.
 
 ## Installation
 
-You can install the package via composer:
+Install this package via composer using the following command:
 
 ```bash
 composer require erenav/makers --dev
 ```
+
+## Commands
+
+### Actions
+
+Action classes simplify application logic by consolidating specific tasks into single classes that can be executed from
+controllers, jobs, listeners etc. This approach improves code reuse and simplifies maintenance.
+
+```bash
+php artisan make:action {name}
+```
+
+### Data Transfer Objects (DTOs)
+
+DTOs are used to contain data in a structured way, facilitating data transfer across different layers of an application
+while keeping the data encapsulated and organized.
+
+```bash
+php artisan make:dto {name}
+```
+
+```bash
+php artisan make:dto {name} {--readonly}
+```
+
+### Enum
+
+Enums are useful when representing a fixed set of possible values for a variable. They also improve type safety and
+readability.
+
+```bash
+php artisan make:enum {name}
+```
+
+```bash
+php artisan make:enum {name} {--type=int|string}
+```
+
+### Macros
+
+Macros provide a way to add custom methods to existing classes provided by the framework without modifying the
+framework's source code.
+
+```bash
+php artisan make:macros {name}
+```
+
+### Pipe
+
+Pipes are commonly used for data transformation, validation, or any series of operations that need to be performed in
+sequence on an object or value.
+
+```bash
+php artisan make:pipe {name}
+```
+
+### States
+
+States can represent different statuses or stages of a model, making it easier to handle state transitions and enforce
+business rules associated with those states.
+
+```bash
+php artisan make:states {base} {states*}
+```
+
+```bash
+php artisan make:state {state} {base}
+```
+
+### Value Object
+
+Value objects encapsulate related properties and behavior for a value into a single, immutable object. This pattern
+enhances code clarity, enforce validation, and promote a more object-oriented approach to managing complex data types.
+
+```bash
+php artisan make:value-object {name}
+```
+
+## Note
+
+All commands have access to the `--force` option. Including this option allows for the override of existing files.
+
+## Customize
 
 You can publish the stubs with:
 
@@ -27,25 +110,6 @@ You can publish the config file with:
 ```bash
 php artisan vendor:publish --tag="makers-config"
 ```
-
-## Commands
-
-```bash
-php artisan makers:action {name}                         Create a new action class
-php artisan makers:dto {name} {--readonly} {--factory}   Create a new dto class
-php artisan makers:enum {name} {--backed=}               Create a new enum class
-php artisan makers:generic-factory {name} {--import=}    Create a new generic factory class
-php artisan makers:macros {name}                         Create a new macro class
-php artisan makers:pipe {name}                           Create a new pipe class
-php artisan makers:state {name} {implementations?*}       Create a new state classes
-php artisan makers:state-implementation {name} {parent}  Create a new state implementation classes
-php artisan makers:state-transition {name} {model}       Create a new state transition class
-php artisan makers:value-object {name} {--cast}          Create a new value object class (with an optional cast class)
-```
-
-### Note
-
-All commands have access to the `--force` option. Including this option allows for the override of existing files.
 
 ## Testing
 

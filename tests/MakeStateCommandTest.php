@@ -2,22 +2,23 @@
 
 use Illuminate\Support\Facades\File;
 
-it('can make an state', function () {
+it('can make a state', function () {
     $targetPath = $this->app->basePath('app/States');
 
     File::deleteDirectory($targetPath);
 
     $className = 'Test';
+
     $postFix = config('makers.makes.state.postfix');
 
     $name = "{$className}{$postFix}";
 
-    $this->artisan("makers:state {$className}")->assertExitCode(0);
+    $this->artisan("make:state {$className} TestParent")->assertExitCode(0);
 
-    $this->assertFileExists($targetPath . "/{$name}.php");
+    $this->assertFileExists($targetPath . "/TestParent" . "/{$name}.php");
 });
 
-it('can make an state with correct postfix', function () {
+it('can make a state with correct postfix', function () {
     $targetPath = $this->app->basePath('app/States');
 
     File::deleteDirectory($targetPath);
@@ -30,7 +31,7 @@ it('can make an state with correct postfix', function () {
 
     $name = "{$className}{$postFix}";
 
-    $this->artisan("makers:state {$name}")->assertExitCode(0);
+    $this->artisan("make:state {$name} TestParent")->assertExitCode(0);
 
-    $this->assertFileExists($targetPath . "/{$name}.php");
+    $this->assertFileExists($targetPath . "/TestParent" . "/{$name}.php");
 });

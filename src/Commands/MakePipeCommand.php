@@ -4,7 +4,7 @@ namespace Erenav\Makers\Commands;
 
 class MakePipeCommand extends MakersCommand
 {
-    protected $name = 'makers:pipe';
+    protected $name = 'make:pipe';
 
     protected $description = 'Create a new pipe class';
 
@@ -12,7 +12,7 @@ class MakePipeCommand extends MakersCommand
 
     protected function getStub(): string
     {
-        return $this->resolveStubPath(config('makers.makes.pipe.stubs.generic'));
+        return $this->resolveStubPath(config('makers.makes.pipe.stubs.standard'));
     }
 
     protected function getDefaultNamespace($rootNamespace): string

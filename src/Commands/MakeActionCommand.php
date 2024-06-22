@@ -4,7 +4,7 @@ namespace Erenav\Makers\Commands;
 
 class MakeActionCommand extends MakersCommand
 {
-    protected $name = 'makers:action';
+    protected $name = 'make:action';
 
     protected $description = 'Create a new action class';
 
@@ -12,7 +12,7 @@ class MakeActionCommand extends MakersCommand
 
     protected function getStub(): string
     {
-        return $this->resolveStubPath(config('makers.makes.action.stubs.generic'));
+        return $this->resolveStubPath(config('makers.makes.action.stubs.standard'));
     }
 
     protected function getDefaultNamespace($rootNamespace): string

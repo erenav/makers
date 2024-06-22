@@ -11,7 +11,7 @@ use Symfony\Component\Console\Input\InputOption;
  */
 class MakeValueObjectCommand extends MakersCommand
 {
-    protected $name = 'makers:value-object';
+    protected $name = 'make:value';
 
     protected $description = 'Create a new value object class';
 
@@ -31,18 +31,18 @@ class MakeValueObjectCommand extends MakersCommand
     protected function createCast(): void
     {
         $this->call('make:cast', [
-            'name' => str_replace(config('makers.makes.value-object.postfix'), '', $this->getNameInput()) . 'Cast',
+            'name' => str_replace(config('makers.makes.value.postfix'), '', $this->getNameInput()) . 'Cast',
         ]);
     }
 
     protected function getStub(): string
     {
-        return $this->resolveStubPath(config('makers.makes.value-object.stubs.basic'));
+        return $this->resolveStubPath(config('makers.makes.value.stubs.standard'));
     }
 
     protected function getDefaultNamespace($rootNamespace): string
     {
-        return $rootNamespace . self::NAMESPACE_SEPARATOR . config('makers.makes.value-object.namespace');
+        return $rootNamespace . self::NAMESPACE_SEPARATOR . config('makers.makes.value.namespace');
     }
 
     protected function getOptions(): array
@@ -54,6 +54,6 @@ class MakeValueObjectCommand extends MakersCommand
 
     protected function getPostfix(): string
     {
-        return config('makers.makes.value-object.postfix');
+        return config('makers.makes.value.postfix');
     }
 }

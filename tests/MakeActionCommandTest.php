@@ -12,7 +12,7 @@ it('can make an action', function () {
 
     $name = "{$className}{$postFix}";
 
-    $this->artisan("makers:action {$className}")->assertExitCode(0);
+    $this->artisan("make:action {$className}")->assertExitCode(0);
 
     $this->assertFileExists($targetPath . "/{$name}.php");
 });
@@ -30,7 +30,7 @@ it('can make an action with correct postfix', function () {
 
     $name = "{$className}{$postFix}";
 
-    $this->artisan("makers:action {$name}")->assertExitCode(0);
+    $this->artisan("make:action {$name}")->assertExitCode(0);
 
     $this->assertFileExists($targetPath . "/{$name}.php");
 });
