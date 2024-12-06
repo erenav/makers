@@ -56,6 +56,13 @@ return [
                 'standard' => 'macro.stub',
             ],
         ],
+        'mixin' => [
+            'namespace' => 'Mixins',
+            'postfix' => 'Mixins',
+            'stubs' => [
+                'standard' => 'mixin.stub',
+            ],
+        ],
         'pipe' => [
             'namespace' => 'Pipes',
             'postfix' => 'Pipe',

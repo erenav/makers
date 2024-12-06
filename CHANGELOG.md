@@ -39,3 +39,7 @@ All notable changes to `makers` will be documented in this file.
 - Remove state transition command
 - Update command handles
 - Update tests
+
+## 2.1.0 - 2024-11-05
+
+- Add make:mixin command

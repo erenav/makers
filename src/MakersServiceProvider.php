@@ -6,6 +6,7 @@ use Erenav\Makers\Commands\MakeActionCommand;
 use Erenav\Makers\Commands\MakeDTOCommand;
 use Erenav\Makers\Commands\MakeEnumCommand;
 use Erenav\Makers\Commands\MakeMacrosCommand;
+use Erenav\Makers\Commands\MakeMixinCommand;
 use Erenav\Makers\Commands\MakePipeCommand;
 use Erenav\Makers\Commands\MakeStatesCommand;
 use Erenav\Makers\Commands\MakeStateCommand;
@@ -25,6 +26,7 @@ class MakersServiceProvider extends PackageServiceProvider
                     MakeDTOCommand::class,
                     MakeEnumCommand::class,
                     MakeMacrosCommand::class,
+                    MakeMixinCommand::class,
                     MakePipeCommand::class,
                     MakeStatesCommand::class,
                     MakeStateCommand::class,

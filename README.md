@@ -51,13 +51,13 @@ php artisan make:enum {name}
 php artisan make:enum {name} {--type=int|string}
 ```
 
-### Macros
+### Mixin
 
-Macros provide a way to add custom methods to existing classes provided by the framework without modifying the
+Mixins provide a way to add custom methods to existing classes provided by the framework without modifying the
 framework's source code.
 
 ```bash
-php artisan make:macros {name}
+php artisan make:mixin {name}
 ```
 
 ### Pipe

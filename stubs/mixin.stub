@@ -1,0 +1,15 @@
+<?php
+
+namespace {{namespace}};
+
+use Closure;
+
+class {{class}}
+{
+    public function foo(): Closure
+    {
+        return function() {
+            //
+        };
+    }
+}
