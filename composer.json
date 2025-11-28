@@ -1,5 +1,6 @@
 {
     "name": "erenav/makers",
+    "version": "2.2.0",
     "description": "Custom Laravel make commands",
     "keywords": [
         "erenav",
@@ -20,8 +21,8 @@
     ],
     "require": {
         "php": "^8.2",
-        "laravel/framework": "^10.0||^11.0",
-        "illuminate/contracts": "^10.0||^11.0",
+        "laravel/framework": "^10.0||^11.0||^12.0",
+        "illuminate/contracts": "^10.0||^11.0||^12.0",
         "spatie/laravel-package-tools": "^1.16"
     },
     "require-dev": {
